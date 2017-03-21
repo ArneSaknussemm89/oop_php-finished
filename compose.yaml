@@ -1,0 +1,16 @@
+version: '2'
+services:
+  OOP_PHP:
+    container_name: OOP_PHP
+    image: php:7-apache
+    environment:
+      VIRTUAL_HOST: .OOP_PHP.dev
+    volumes:
+      - ~/Sites/OOP_PHP:/var/www/html
+    networks:
+      - dockercompose
+    restart: always
+networks:
+  dockercompose:
+    external:
+      name: dockercompose_dockercompose
